@@ -6,6 +6,7 @@ import useGraph from "src/hooks/store/useGraph";
 import useStored from "src/hooks/store/useStored";
 import { parser } from "src/utils/jsonParser";
 import styled from "styled-components";
+import { editor } from "monaco-editor";
 
 loader.config({
   paths: {
@@ -13,11 +14,12 @@ loader.config({
   },
 });
 
-const editorOptions = {
+const editorOptions: editor.IStandaloneEditorConstructionOptions = {
   formatOnPaste: true,
   minimap: {
     enabled: false,
   },
+  wordWrap: 'off'
 };
 
 const StyledWrapper = styled.div`

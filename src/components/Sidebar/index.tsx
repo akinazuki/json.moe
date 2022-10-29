@@ -42,7 +42,7 @@ const StyledSidebar = styled.div`
   }
 `;
 
-const StyledElement = styled.button`
+export const StyledElement = styled.button`
   position: relative;
   display: flex;
   justify-content: center;
