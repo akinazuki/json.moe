@@ -10,6 +10,7 @@ import {
   AiOutlineFileAdd,
   AiOutlineLink,
   AiOutlineEdit,
+  AiOutlineLayout,
 } from "react-icons/ai";
 import { CgArrowsMergeAltH, CgArrowsShrinkH } from "react-icons/cg";
 import { FiDownload } from "react-icons/fi";
@@ -139,6 +140,11 @@ function rotateLayout(layout: "LEFT" | "RIGHT" | "DOWN" | "UP") {
   return 360;
 }
 
+function toggleWordWrap(editor: any) {
+  console.log('toggleWordWrap', editor);
+  editor.updateOptions({ wordWrap: editor.getOption(editor.Option.wordWrap) === "on" ? "off" : "on" });
+}
+
 export const Sidebar: React.FC = () => {
   const getJson = useConfig(state => state.getJson);
   const setConfig = useConfig(state => state.setConfig);
@@ -226,6 +232,11 @@ export const Sidebar: React.FC = () => {
         <Tooltip title="Clear JSON">
           <StyledElement onClick={() => setClearVisible(true)}>
             <AiOutlineDelete />
+          </StyledElement>
+        </Tooltip>
+        <Tooltip title="Word Wrap" onClick={()=>toggleWordWrap()}>
+          <StyledElement>
+            <AiOutlineLayout />
           </StyledElement>
         </Tooltip>
         <Tooltip className="desktop" title="Share">

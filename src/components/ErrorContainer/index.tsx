@@ -1,9 +1,6 @@
 import React from "react";
-import { AiOutlineLayout } from "react-icons/ai";
 import { MdReportGmailerrorred, MdOutlineCheckCircleOutline } from "react-icons/md";
 import styled from "styled-components";
-import { StyledElement } from "../Sidebar";
-import { Tooltip } from "../Tooltip";
 
 const StyledErrorWrapper = styled.div`
   z-index: 1;
@@ -54,11 +51,11 @@ export const ErrorContainer = ({ hasError }: { hasError: boolean }) => {
             <MdOutlineCheckCircleOutline size={20} />
           )}
           {hasError ? "Invalid JSON" : "JSON Valid"}
-          <Tooltip title="Word Wrap">
-          <StyledElement onClick={() => console.log('114514')}>
+          {/* <Tooltip title="Word Wrap" onClick={toggleWordWrap}>
+          <StyledElement>
             <AiOutlineLayout />
           </StyledElement>
-        </Tooltip>
+        </Tooltip> */}
         </StyledTitle>
       </StyledErrorExpand>
     </StyledErrorWrapper>

@@ -19,7 +19,7 @@ const editorOptions: editor.IStandaloneEditorConstructionOptions = {
   minimap: {
     enabled: false,
   },
-  wordWrap: 'off'
+  wordWrap: 'on'
 };
 
 const StyledWrapper = styled.div`
